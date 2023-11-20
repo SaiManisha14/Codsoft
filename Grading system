@@ -1,0 +1,49 @@
+package com.mycompany.codsoft;
+
+import java.util.Scanner;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
+/**
+ *
+ * @author DELL 3400
+ */
+public class Grade {
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter total number of subjects:");
+        int n=sc.nextInt();
+        int Totalmarks=0;
+        for(int i=1;i<=n;i++){
+            System.out.println("Enter marks obtained:"+i);
+            int marks=sc.nextInt();
+            Totalmarks+=marks;  
+        }
+        double percentage=(double)Totalmarks/n;
+        String grade;
+        if(percentage >= 90){
+            grade="O";
+        }
+        else if(percentage <= 90 && percentage >= 80 ) {
+            grade="A";
+        }
+        else if(percentage <= 80 && percentage >= 70) {
+            grade="B";
+        }
+        else if(percentage <= 70 && percentage >=60) {
+            grade="C";
+        }
+        else if(percentage <= 60 && percentage >=50) {
+            grade="D";
+        }
+        else {
+            grade="F";
+        }
+        System.out.println("Total marks obtained are "+Totalmarks);
+        System.out.println("Average percentage is "+percentage);
+        System.out.println("Grade obtained:"+grade);
+        sc.close();
+    }
+}
